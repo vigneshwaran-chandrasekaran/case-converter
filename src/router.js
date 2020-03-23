@@ -13,6 +13,9 @@ export default function Router() {
 				<Layout>
 					<Content>
 						<Switch>
+							<Route path="/case-converter">
+								<Pages.CaseConverter />
+							</Route>
 							<Route path="*">
 								<Pages.NotFound />
 							</Route>
