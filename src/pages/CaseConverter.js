@@ -16,10 +16,13 @@ export function CaseConverter() {
 		<div>
 			<form onSubmit={handleSubmit}>
 				<label>
-					Essay:
 					<textarea value={value} onChange={handleChange} />
 				</label>
-				<input type="submit" value="Submit" />
+				<div>
+					<input type="submit" value="Submit" />
+				</div>
+				<p>{value.toUpperCase()}</p>
+				<p>{value.toLowerCase()}</p>
 			</form>
 		</div>
 	);
