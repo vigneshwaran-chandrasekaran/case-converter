@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { camelCase } from 'lodash';
 
 export function CaseConverter() {
 	const [value, setValue] = useState('');
@@ -23,6 +24,7 @@ export function CaseConverter() {
 				</div>
 				<p>{value.toUpperCase()}</p>
 				<p>{value.toLowerCase()}</p>
+				<p>{camelCase(value)}</p>
 			</form>
 		</div>
 	);
