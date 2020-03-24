@@ -13,13 +13,13 @@ export function CaseConverter() {
 	}
 
 	return (
-		<div>
+		<div className="mt-30">
 			<Row type="flex" justify="center">
 				<Col span={20}>
 					<TextArea rows={4} value={value} onChange={handleChange} />
 				</Col>
 			</Row>
-			<Row type="flex" justify="center">
+			<Row type="flex" justify="center" className="mt-30">
 				<Col span={20}>
 					<Text strong>UPPERCASE</Text>
 					<p>{upperCase(value)}</p>
