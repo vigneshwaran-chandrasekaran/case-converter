@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Input, Row, Col, Typography } from 'antd';
-import { camelCase, kebabCase } from 'lodash';
+import { lowerCase, camelCase, kebabCase, upperCase } from 'lodash';
 
 const { TextArea } = Input;
 const { Text } = Typography;
@@ -22,9 +22,9 @@ export function CaseConverter() {
 			<Row type="flex" justify="center">
 				<Col span={20}>
 					<Text strong>UPPERCASE</Text>
-					<p>{value.toUpperCase()}</p>
+					<p>{upperCase(value)}</p>
 					<Text strong>lowercase</Text>
-					<p>{value.toLowerCase()}</p>
+					<p>{lowerCase(value)}</p>
 					<Text strong>camelCase</Text>
 					<p>{camelCase(value)}</p>
 					<Text strong>kebab-case</Text>
