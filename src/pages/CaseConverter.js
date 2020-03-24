@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Input, Row, Col, Typography, Divider } from 'antd';
-import { camelCase } from 'lodash';
+import { Input, Row, Col, Typography } from 'antd';
+import { camelCase, kebabCase } from 'lodash';
 
 const { TextArea } = Input;
 const { Text } = Typography;
@@ -27,6 +27,8 @@ export function CaseConverter() {
 					<p>{value.toLowerCase()}</p>
 					<Text strong>camelCase</Text>
 					<p>{camelCase(value)}</p>
+					<Text strong>kebab-case</Text>
+					<p>{kebabCase(value)}</p>
 				</Col>
 			</Row>
 		</div>
