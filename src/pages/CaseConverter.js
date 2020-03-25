@@ -16,7 +16,13 @@ export function CaseConverter() {
 		<div className="mt-30">
 			<Row type="flex" justify="center">
 				<Col span={20}>
-					<TextArea rows={4} value={value} onChange={handleChange} />
+					<h3>Case Converter</h3>
+					<TextArea
+						rows={4}
+						value={value}
+						onChange={handleChange}
+						spellCheck={true}
+					/>
 				</Col>
 			</Row>
 			<Row type="flex" justify="center" className="mt-30">
