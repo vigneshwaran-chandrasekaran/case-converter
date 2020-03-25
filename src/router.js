@@ -16,6 +16,9 @@ export default function Router() {
 							<Route path="/case-converter">
 								<Pages.CaseConverter />
 							</Route>
+							<Route path="/url-query-string-parser">
+								<Pages.UrlQueryStringParser />
+							</Route>
 							<Route path="*">
 								<Pages.NotFound />
 							</Route>
