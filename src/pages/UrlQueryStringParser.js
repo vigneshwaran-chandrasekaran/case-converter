@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Input, Row, Col, Typography } from 'antd';
-import { lowerCase, camelCase, kebabCase, upperCase, snakeCase } from 'lodash';
+import { upperCase } from 'lodash';
 
 const { TextArea } = Input;
 const { Text } = Typography;
@@ -29,14 +29,6 @@ export function UrlQueryStringParser() {
 				<Col span={20}>
 					<Text strong>UPPERCASE</Text>
 					<p>{upperCase(value)}</p>
-					<Text strong>lowercase</Text>
-					<p>{lowerCase(value)}</p>
-					<Text strong>camelCase</Text>
-					<p>{camelCase(value)}</p>
-					<Text strong>kebab-case</Text>
-					<p>{kebabCase(value)}</p>
-					<Text strong>snake_case(underscores)</Text>
-					<p>{snakeCase(value)}</p>
 				</Col>
 			</Row>
 		</div>
