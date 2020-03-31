@@ -32,7 +32,7 @@ export default function Router() {
 					<Menu
 						theme="light"
 						mode="inline"
-						defaultSelectedKeys={['1']}
+						defaultSelectedKeys={['2']}
 					>
 						<Menu.Item key="1">
 							<Link to="/case-converter">Case converter</Link>
@@ -47,7 +47,7 @@ export default function Router() {
 					</Menu>
 				</Sider>
 				<Layout>
-					<Header>Header</Header>
+					{/* <Header>Header</Header> */}
 					<Content>
 						<Switch>
 							<Route path="/case-converter">
@@ -61,7 +61,7 @@ export default function Router() {
 							</Route>
 						</Switch>
 					</Content>
-					<Footer>Footer</Footer>
+					{/* <Footer>Footer</Footer> */}
 				</Layout>
 			</Layout>
 		</BrowserRouter>
