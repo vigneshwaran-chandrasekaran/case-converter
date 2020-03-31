@@ -1,18 +1,10 @@
 import React from 'react';
 import { Layout, Menu } from 'antd';
-import {
-	UploadOutlined,
-	UserOutlined,
-	VideoCameraOutlined,
-} from '@ant-design/icons';
-
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 import * as Pages from './pages';
 
-const { Header, Footer, Sider, Content } = Layout;
-
-const { SubMenu } = Menu;
+const { Sider, Content } = Layout;
 
 export default function Router() {
 	return (
@@ -47,7 +39,6 @@ export default function Router() {
 					</Menu>
 				</Sider>
 				<Layout>
-					{/* <Header>Header</Header> */}
 					<Content>
 						<Switch>
 							<Route path="/case-converter">
@@ -61,7 +52,6 @@ export default function Router() {
 							</Route>
 						</Switch>
 					</Content>
-					{/* <Footer>Footer</Footer> */}
 				</Layout>
 			</Layout>
 		</BrowserRouter>

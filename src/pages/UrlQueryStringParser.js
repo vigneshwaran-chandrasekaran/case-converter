@@ -68,10 +68,13 @@ export function UrlQueryStringParser() {
 			<Row type="flex" justify="center" className="mt-30">
 				<Col span={20}>
 					<Text strong>Result</Text>
-					<table>
+					<table border="1">
 						{Object.keys(result).map((key, index) => (
 							<tr key={index}>
-								<td>{key}</td> <td>{result[key]}</td>
+								<td className="pr-20">
+									<strong>{key}</strong>
+								</td>
+								<td>{result[key]}</td>
 							</tr>
 						))}
 					</table>
