@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Input, Row, Col, Typography } from 'antd';
 
 const { TextArea } = Input;
 const { Text } = Typography;
 
+const SEARCH =
+	'https://www.google.com/search?q=india&oq=india&aqs=chrome..69i57j69i60j69i61j5j69i60l3j69i65.4326j0j7&sourceid=chrome&ie=UTF-8';
+
 export function UrlQueryStringParser() {
-	const [value, setValue] = useState('sample text');
+	const [value, setValue] = useState(SEARCH);
 	const [result, setResult] = useState({});
+
+	useEffect(() => {
+		getJsonFromUrl2(value);
+	}, []);
 
 	function handleChange(event) {
 		setValue(event.target.value);
@@ -61,11 +68,13 @@ export function UrlQueryStringParser() {
 			<Row type="flex" justify="center" className="mt-30">
 				<Col span={20}>
 					<Text strong>Result</Text>
-					{Object.keys(result).map((key, index) => (
-						<p key={index}>
-							{key} : {result[key]}
-						</p>
-					))}
+					<table>
+						{Object.keys(result).map((key, index) => (
+							<tr key={index}>
+								<td>{key}</td> <td>{result[key]}</td>
+							</tr>
+						))}
+					</table>
 				</Col>
 			</Row>
 		</div>
