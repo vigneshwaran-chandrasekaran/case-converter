@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Input, Row, Col, Typography } from 'antd';
-import { upperCase } from 'lodash';
 
 const { TextArea } = Input;
 const { Text } = Typography;
 
 export function UrlQueryStringParser() {
 	const [value, setValue] = useState('sample text');
+
+	const [result1, setResult1] = useState({});
+	const [result2, setResult2] = useState({});
 
 	function handleChange(event) {
 		setValue(event.target.value);
@@ -23,6 +25,7 @@ export function UrlQueryStringParser() {
 			result[item[0]] = decodeURIComponent(item[1]);
 		});
 		console.log('result 1', result);
+		setResult1(result);
 		return result;
 	}
 
@@ -54,6 +57,7 @@ export function UrlQueryStringParser() {
 				else result[key][index] = val;
 			}
 		});
+		setResult2(result);
 		console.log('result 2', result);
 		// return result;
 	}
@@ -62,7 +66,7 @@ export function UrlQueryStringParser() {
 		<div className="mt-30">
 			<Row type="flex" justify="center">
 				<Col span={20}>
-					<h3>Case Converter</h3>
+					<h3>URL Parser</h3>
 					<TextArea
 						rows={4}
 						value={value}
@@ -73,8 +77,12 @@ export function UrlQueryStringParser() {
 			</Row>
 			<Row type="flex" justify="center" className="mt-30">
 				<Col span={20}>
-					<Text strong>UPPERCASE</Text>
-					<p>{upperCase(value)}</p>
+					<Text strong>Result</Text>
+					{Object.keys(result2).map((key, index) => (
+						<p key={index}>
+							{key} : {result2[key]}
+						</p>
+					))}
 				</Col>
 			</Row>
 		</div>
