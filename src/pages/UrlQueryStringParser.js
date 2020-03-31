@@ -6,31 +6,14 @@ const { Text } = Typography;
 
 export function UrlQueryStringParser() {
 	const [value, setValue] = useState('sample text');
-
-	const [result1, setResult1] = useState({});
-	const [result2, setResult2] = useState({});
+	const [result, setResult] = useState({});
 
 	function handleChange(event) {
 		setValue(event.target.value);
-		getJsonFromUrl(event.target.value);
 		getJsonFromUrl2(event.target.value);
 	}
 
-	function getJsonFromUrl(url) {
-		// if (!url) url = location.search;
-		var query = url.substr(1);
-		var result = {};
-		query.split('&').forEach(function(part) {
-			var item = part.split('=');
-			result[item[0]] = decodeURIComponent(item[1]);
-		});
-		console.log('result 1', result);
-		setResult1(result);
-		return result;
-	}
-
 	function getJsonFromUrl2(url) {
-		// if(!url) url = location.href;
 		var question = url.indexOf('?');
 		var hash = url.indexOf('#');
 		if (hash == -1 && question == -1) return {};
@@ -57,7 +40,7 @@ export function UrlQueryStringParser() {
 				else result[key][index] = val;
 			}
 		});
-		setResult2(result);
+		setResult(result);
 		console.log('result 2', result);
 		// return result;
 	}
@@ -78,9 +61,9 @@ export function UrlQueryStringParser() {
 			<Row type="flex" justify="center" className="mt-30">
 				<Col span={20}>
 					<Text strong>Result</Text>
-					{Object.keys(result2).map((key, index) => (
+					{Object.keys(result).map((key, index) => (
 						<p key={index}>
-							{key} : {result2[key]}
+							{key} : {result[key]}
 						</p>
 					))}
 				</Col>
